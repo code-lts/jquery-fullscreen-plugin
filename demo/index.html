@@ -5,11 +5,32 @@
     <title>jQuery Fullscreen Plugin demo</title>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script type="text/javascript" src="../jquery.fullscreen-min.js"></script>
+    <script type="text/javascript">
+    
+    $(function() {
+    
+    $(".fullscreen-supported").toggle($(document).fullScreen() != null);
+    $(".fullscreen-not-supported").toggle($(document).fullScreen() == null);
+    
+    });
+    
+    </script>
   </head>
   <body>
-    <button onclick="$(document).fullScreen(true)">Go Fullscreen</button>
-    <button onclick="$(document).fullScreen(false)">Exit Fullscreen</button>
-    <button onclick="$(document).toggleFullScreen()">Toggle Fullscreen</button>
-    <button onclick="alert($(document).fullScreen())">Are we Fullscreen?</button>
+    <h1>jQuery Fullscreen Plugin demo</h1>
+    <div id="buttons">
+      <button onclick="$(document).fullScreen(true)">Enter Fullscreen mode (Document)</button>
+      <button onclick="$('#buttons').fullScreen(true)">Enter Fullscreen mode (Button panel)</button><br />
+      <button onclick="$(document).fullScreen(false)">Exit Fullscreen mode</button><br />
+      <button onclick="$(document).toggleFullScreen()">Toggle Fullscreen mode (Document)</button><br />
+      <button onclick="alert($(document).fullScreen())">Query Fullscreen mode</button>
+    </div>
+    <p class="fullscreen-supported">
+      Browser supports fullscreen mode.
+    </p>
+    <p class="fullscreen-not-supported">
+      Browser does not support fullscreen mode.    
+    </p>
+      
   </body>
 </html>

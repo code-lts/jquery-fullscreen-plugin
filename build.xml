@@ -7,6 +7,7 @@
            classpath="lib/compiler.jar" />
            
   <target name="compile">
+    <delete file="jquery.fullscreen-min.js" />
     <jscomp compilationLevel="advanced"
             warning="verbose"
             debug="false"
@@ -20,7 +21,10 @@
     </jscomp>
   </target>
   
-  <target name="package" depends="compile">
+  <target name="test" depends="compile">
+  </target>
+  
+  <target name="package" depends="test">
     <jar destfile="jquery.fullscreen.jar">
       <mappedresources>
         <fileset dir=".">

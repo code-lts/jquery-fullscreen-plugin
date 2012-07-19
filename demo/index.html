@@ -12,14 +12,31 @@
     $(".fullscreen-supported").toggle($(document).fullScreen() != null);
     $(".fullscreen-not-supported").toggle($(document).fullScreen() == null);
     
+    $(document).bind("fullscreenchange", function(e) {
+       console.log("Full screen changed.");
+       $("#status").text($(document).fullScreen() ? 
+           "Full screen enabled" : "Full screen disabled");
+    });
+    
+    $(document).bind("fullscreenerror", function(e) {
+       console.log("Full screen error.");
+       $("#status").text("Browser won't enter full screen mode for some reason.");
+    });
+    
     });
     
     </script>
   </head>
-  <body>
+  <body style="background:white">
     <h1>jQuery Fullscreen Plugin demo</h1>
+    <form action="test.php" id="form">
+      <input type="text"></input>
+      <input type="submit" />
+    </form>
     <div id="buttons">
       <button onclick="$(document).fullScreen(true)">Enter Fullscreen mode (Document)</button>
+      <button onclick="$('#form').fullScreen(true)">Enter Fullscreen mode
+      (Form)</button>
       <button onclick="$('#buttons').fullScreen(true)">Enter Fullscreen mode (Button panel)</button><br />
       <button onclick="$(document).fullScreen(false)">Exit Fullscreen mode</button><br />
       <button onclick="$(document).toggleFullScreen()">Toggle Fullscreen mode (Document)</button><br />
@@ -31,6 +48,7 @@
     <p class="fullscreen-not-supported">
       Browser does not support fullscreen mode.    
     </p>
+    <p id="status"></p>
       
   </body>
 </html>

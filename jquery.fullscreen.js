@@ -1,5 +1,5 @@
 /** 
- * @preserve jquery.fullscreen 1.1.0
+ * @preserve jquery.fullscreen 1.1.1
  * https://github.com/kayahr/jquery-fullscreen-plugin
  * Copyright (C) 2012 Klaus Reimer <k@ailis.de>
  * Licensed under the MIT license

@@ -42,12 +42,14 @@
       <button onclick="$(document).toggleFullScreen()">Toggle Fullscreen mode (Document)</button><br />
       <button onclick="alert($(document).fullScreen())">Query Fullscreen mode</button>
     </div>
+    <iframe src="iframe.html" width="512" height="100" webkitAllowFullScreen mozAllowFullScreen allowFullScreen>
+    </iframe>
     <p class="fullscreen-supported">
       Browser supports fullscreen mode.
     </p>
     <p class="fullscreen-not-supported">
       Browser does not support fullscreen mode.    
-    </p>
+    </p>    
     <p id="status"></p>
       
   </body>

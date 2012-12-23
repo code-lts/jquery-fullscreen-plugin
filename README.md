@@ -69,3 +69,12 @@ document. Example:
     $(document).bind("fullscreenerror", function() {
         alert("Browser rejected fullscreen change");
     });
+
+
+### Fullscreen iframe
+
+Entering fullscreen mode from within an iframe is not allowed by default but
+it can be enabled with a few attributes on the iframe:
+
+    <iframe src="iframe.html" webkitAllowFullScreen mozAllowFullScreen allowFullScreen>
+    </iframe>

@@ -63,7 +63,7 @@ state change then the plugin triggers a `fullscreenerror` event on the
 document. Example:
 
     $(document).bind("fullscreenchange", function() {
-        console.log("Fullscreen " + $(document).fullScreen() ? "on" : "off);
+        console.log("Fullscreen " + ($(document).fullScreen() ? "on" : "off"));
     });
 
     $(document).bind("fullscreenerror", function() {

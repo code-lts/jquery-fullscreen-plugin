@@ -115,6 +115,7 @@ function toggleFullScreen()
  */
 function fullScreenChangeHandler(event)
 {
+window.console.log("changed");
     jQuery(document).trigger(new jQuery.Event("fullscreenchange"));
 }
 
@@ -127,6 +128,7 @@ function fullScreenChangeHandler(event)
  */
 function fullScreenErrorHandler(event)
 {
+window.console.log("error");
     jQuery(document).trigger(new jQuery.Event("fullscreenerror"));
 }
 
@@ -156,8 +158,8 @@ function installFullScreenHandlers()
     }
 
     // Install the event handlers
-    document.addEventListener(change, fullScreenChangeHandler, true);
-    document.addEventListener(error, fullScreenErrorHandler, true);
+    jQuery(document).bind(change, fullScreenChangeHandler);
+    jQuery(document).bind(error, fullScreenErrorHandler);
 }
 
 jQuery.fn["fullScreen"] = fullScreen;

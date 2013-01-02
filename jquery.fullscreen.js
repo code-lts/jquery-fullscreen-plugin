@@ -1,5 +1,5 @@
 /**
- * @preserve jquery.fullscreen 1.1.2
+ * @preserve jquery.fullscreen 1.1.3
  * https://github.com/kayahr/jquery-fullscreen-plugin
  * Copyright (C) 2012 Klaus Reimer <k@ailis.de>
  * Licensed under the MIT license
@@ -37,14 +37,14 @@ function fullScreen(state)
     
     // Find the real element and the document (Depends on whether the
     // document itself or a HTML element was selected)
-    if (e instanceof Document)
+    if (e.ownerDocument)
     {
-        doc = e;
-        e = doc.documentElement;
+        doc = e.ownerDocument;
     }
     else
     {
-        doc = e.ownerDocument;
+        doc = e;
+        e = doc.documentElement;
     }
     
     // When no state was specified then return the current state.

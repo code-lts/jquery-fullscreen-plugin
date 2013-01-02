@@ -1,5 +1,5 @@
-/** 
- * @preserve jquery.fullscreen 1.1.1
+/**
+ * @preserve jquery.fullscreen 1.1.2
  * https://github.com/kayahr/jquery-fullscreen-plugin
  * Copyright (C) 2012 Klaus Reimer <k@ailis.de>
  * Licensed under the MIT license
@@ -115,7 +115,6 @@ function toggleFullScreen()
  */
 function fullScreenChangeHandler(event)
 {
-window.console.log("changed");
     jQuery(document).trigger(new jQuery.Event("fullscreenchange"));
 }
 
@@ -128,7 +127,6 @@ window.console.log("changed");
  */
 function fullScreenErrorHandler(event)
 {
-window.console.log("error");
     jQuery(document).trigger(new jQuery.Event("fullscreenerror"));
 }
 

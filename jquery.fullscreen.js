@@ -35,7 +35,7 @@ function fullScreen(state)
     // to fullscreen multiple elements.
     e = (/** @type {Element} */ this[0]);
     
-    // Find the real element and the document (Depends on wether the
+    // Find the real element and the document (Depends on whether the
     // document itself or a HTML element was selected)
     if (e instanceof Document)
     {

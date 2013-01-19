@@ -1,5 +1,5 @@
 /**
- * @preserve jquery.fullscreen 1.1.3
+ * @preserve jquery.fullscreen 1.1.4
  * https://github.com/kayahr/jquery-fullscreen-plugin
  * Copyright (C) 2012 Klaus Reimer <k@ailis.de>
  * Licensed under the MIT license
@@ -79,7 +79,7 @@ function fullScreen(state)
         func = (/** @type {?Function} */ e["requestFullScreen"])
             || (/** @type {?Function} */ e["webkitRequestFullScreen"])
             || (/** @type {?Function} */ e["mozRequestFullScreen"]);
-        if (func) func.call(e);
+        if (func) func.call(e, Element["ALLOW_KEYBOARD_INPUT"]);
         return this;
     }
     else

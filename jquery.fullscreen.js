@@ -79,7 +79,13 @@ function fullScreen(state)
         func = (/** @type {?Function} */ e["requestFullScreen"])
             || (/** @type {?Function} */ e["webkitRequestFullScreen"])
             || (/** @type {?Function} */ e["mozRequestFullScreen"]);
-        if (func) func.call(e, Element["ALLOW_KEYBOARD_INPUT"]);
+        if (func) 
+        {
+            if (Element["ALLOW_KEYBOARD_INPUT"])
+                func.call(e, Element["ALLOW_KEYBOARD_INPUT"]);
+            else
+                func.call(e);
+        }
         return this;
     }
     else

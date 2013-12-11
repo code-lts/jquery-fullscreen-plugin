@@ -53,14 +53,23 @@ function fullScreen(state)
         // When fullscreen mode is not supported then return null
         if (!((/** @type {?Function} */ doc["cancelFullScreen"])
             || (/** @type {?Function} */ doc["webkitCancelFullScreen"])
+            || (/** @type {?Function} */ doc["msExitFullscreen"])
             || (/** @type {?Function} */ doc["mozCancelFullScreen"])))
         {
             return null;
         }
         
+        // In theory this should not be necessary but looks like IE11
+        // has a bug here. msFullscreenEnabled always returns true. So
+        // this workaround also checks if msFullScreenElement is null and
+        // returns false in this case
+        if (doc["msFullscreenEnabled"] && !doc["msFullscreenElement"])
+            return false;
+        
         // Check fullscreen state
         state = !!doc["fullScreen"]
             || !!doc["webkitIsFullScreen"]
+            || !!doc["msFullscreenEnabled"]
             || !!doc["mozFullScreen"];
         if (!state) return state;
         
@@ -68,6 +77,7 @@ function fullScreen(state)
         // support this
         return (/** @type {?Element} */ doc["fullScreenElement"])
             || (/** @type {?Element} */ doc["webkitCurrentFullScreenElement"])
+            || (/** @type {?Element} */ doc["msFullscreenElement"])
             || (/** @type {?Element} */ doc["mozFullScreenElement"])
             || state;
     }
@@ -78,6 +88,7 @@ function fullScreen(state)
         // Enter fullscreen
         func = (/** @type {?Function} */ e["requestFullScreen"])
             || (/** @type {?Function} */ e["webkitRequestFullScreen"])
+            || (/** @type {?Function} */ e["msRequestFullscreen"])
             || (/** @type {?Function} */ e["mozRequestFullScreen"]);
         if (func) 
         {
@@ -93,6 +104,7 @@ function fullScreen(state)
         // Exit fullscreen
         func = (/** @type {?Function} */ doc["cancelFullScreen"])
             || (/** @type {?Function} */ doc["webkitCancelFullScreen"])
+            || (/** @type {?Function} */ doc["msExitFullscreen"])
             || (/** @type {?Function} */ doc["mozCancelFullScreen"]);
         if (func) func.call(doc);
         return this;
@@ -149,6 +161,11 @@ function installFullScreenHandlers()
     {
         change = "webkitfullscreenchange";
         error = "webkitfullscreenerror";
+    }
+    else if (e["msExitFullscreen"])
+    {
+        change = "MSFullscreenChange";
+        error = "MSFullscreenError";
     }
     else if (e["mozCancelFullScreen"])
     {

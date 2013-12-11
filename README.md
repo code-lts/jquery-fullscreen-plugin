@@ -7,7 +7,8 @@ Description
 
 This jQuery plugin provides a simple to use mechanism to control the
 new fullscreen mode of modern browsers. Currently only newer Webkit-based
-browsers (Like Chrome) and Firefox provide this new fullscreen feature.
+browsers (Like Chrome and Safari), Firefox and IE11+ provide this new 
+fullscreen feature.
 
 
 Usage
@@ -78,3 +79,10 @@ it can be enabled with a few attributes on the iframe:
 
     <iframe src="iframe.html" webkitAllowFullScreen mozAllowFullScreen allowFullScreen>
     </iframe>
+
+### Known issues
+
+* In IE 11 an empty page is displayed when entering fullscreen from within an
+  iframe. No idea why. Any help is welcome.
+* In Safari (At least in Safari 7) no keyboard input is allowed in fullscreen
+  mode.

@@ -6,7 +6,7 @@
  * (See http://www.opensource.org/licenses/mit-license)
  */
  
-(function() {
+(function(jQuery) {
 
 /**
  * Sets or gets the fullscreen state.
@@ -181,4 +181,4 @@ jQuery.fn["fullScreen"] = fullScreen;
 jQuery.fn["toggleFullScreen"] = toggleFullScreen;
 installFullScreenHandlers();
 
-})();
+})(jQuery);

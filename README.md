@@ -1,5 +1,6 @@
 jQuery Fullscreen Plugin
 ========================
+[![CDNJS](https://img.shields.io/cdnjs/v/jquery-fullscreen-plugin.svg)](https://cdnjs.com/libraries/jquery-fullscreen-plugin)
 
 
 Description

@@ -1,5 +1,8 @@
 jQuery Fullscreen Plugin
 ========================
+
+[![npm version](https://badge.fury.io/js/jquery-fullscreen-plugin.svg)](https://badge.fury.io/js/jquery-fullscreen-plugin)
+
 [![CDNJS](https://img.shields.io/cdnjs/v/jquery-fullscreen-plugin.svg)](https://cdnjs.com/libraries/jquery-fullscreen-plugin)
 
 

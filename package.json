@@ -1,5 +1,5 @@
 {
-    "name": "fullscreen",
+    "name": "jquery-fullscreen-plugin",
     "title": "jQuery Fullscreen Plugin",
     "description": "This jQuery plugin provides a simple to use mechanism to control the new fullscreen mode of modern browsers. Currently only newer Webkit-based browsers (Like Chrome) and Firefox provide this new fullscreen feature.",
     "keywords": [

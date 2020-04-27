@@ -13,12 +13,12 @@
     "licenses": [
         {
             "type": "MIT",
-            "url": "https://github.com/kayahr/jquery-fullscreen-plugin/blob/master/LICENSE.txt"
+            "url": "https://github.com/code-lts/jquery-fullscreen-plugin/blob/master/LICENSE.txt"
         }
     ],
-    "bugs": "https://github.com/kayahr/jquery-fullscreen-plugin/issues",
-    "homepage": "https://github.com/kayahr/jquery-fullscreen-plugin",
-    "docs": "https://github.com/kayahr/jquery-fullscreen-plugin",
+    "bugs": "https://github.com/code-lts/jquery-fullscreen-plugin/issues",
+    "homepage": "https://github.com/code-lts/jquery-fullscreen-plugin",
+    "docs": "https://github.com/code-lts/jquery-fullscreen-plugin",
     "dependencies": {
         "jquery": ">=1.5"
     }
